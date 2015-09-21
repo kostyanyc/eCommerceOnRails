@@ -22,5 +22,8 @@ module Backend
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    #Setting assets precompile to false for faster assets precompile
+    config.assets.initialize_on_precompile = false
   end
 end
