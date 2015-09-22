@@ -11,3 +11,8 @@
  * file per style scope.
  */
 @import "bootstrap";
+
+$padding-for-top-menu: 60px;
+body {
+  padding-top: $padding-for-top-menu;
+}
