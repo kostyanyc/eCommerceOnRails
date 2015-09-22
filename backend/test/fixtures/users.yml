@@ -1,11 +1,11 @@
-konst:    
+user_one:    
     first_name: "Konst"
     last_name: "Mikhail"
     profile_name: "konst"
     email: "konstat@ctgr.com"
     encrypted_password: "localhost"
 
-konst2:    
+user_two:    
     first_name: "Konst"
     last_name: "Mikhail"
     profile_name: "konst"

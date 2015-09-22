@@ -47,8 +47,8 @@ class ImagesController < ApplicationController
 	  end
 	end
 
-	# DELETE /statuses/1
-	# DELETE /statuses/1.json
+	# DELETE /images/1
+	# DELETE /images/1.json
 	def destroy
 	  @image.destroy
 	  respond_to do |format|

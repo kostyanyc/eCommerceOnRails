@@ -31,7 +31,7 @@ class UserTest < ActiveSupport::TestCase
     test "a user must have a unique profile name2" do
   	user = User.new
   	#user.profile_name = users(:konst).profile_name
-  	user = users(:konst2)
+  	user = users(:user_one)
   	assert !user.save
   	puts user.errors.inspect
   	assert !user.errors[:profile_name].empty?
@@ -41,7 +41,7 @@ class UserTest < ActiveSupport::TestCase
   test "a user should have a profile name without spaces" do
   	user = User.new 	
   	#user.profile_name = users(:konst).profile_name
-  	user = users(:konst)
+  	user = users(:user_two)
   	user.profile_name = "konst konst"
   	assert !user.save  
   	puts user.errors.inspect + "profile validation"
