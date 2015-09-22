@@ -1,0 +1,5 @@
+<h1><%= @image.title %></h1>
+<%= @image.description %>
+<%= image_tag @image.asset.url(:medium)%>
+<%= link_to "Back", images_path %>
+<%= link_to "Edit", edit_image_path(@image)%>

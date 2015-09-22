@@ -1,0 +1,13 @@
+<h1>My Images Index</h1> 
+You can always participate in our blog by <%= link_to "adding new images", new_image_path,   { :class=>"btn btn-default" } %>
+<p>
+<ul class="list-group">
+	<% @images.each do |image| %>
+	<li class="list-group-item">
+		<h4 class="list-group-item-heading"><%= image.title %></h4>
+		<p class="list-group-item-text"><%= image.description %></p>
+		 <p><%= image_tag image.asset.url(:thumb)%></p>
+		Link: <%= link_to "Read me", image_path(image)%>
+	</li>
+	<% end %>
+</ul>

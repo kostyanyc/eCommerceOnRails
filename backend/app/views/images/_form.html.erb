@@ -1,0 +1,21 @@
+<%= form_for @image, :url => images_path, :html => { :multipart => true } do |f| %>
+<div class="field">
+    <%= f.label :file_name %><br>
+    <%= f.text_field :file_name %>
+  </div>
+   <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%=f.label :image%>
+    <%=f.file_field :asset%>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => 'btn btn-default navbar-btn'%>
+  </div>
+<% end %>
