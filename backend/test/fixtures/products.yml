@@ -4,12 +4,9 @@ one:
   title: MyString
   slug: MyString
   description: MyString
-  price: MyString
-  stock: MyString
-
+  
 two:
   title: MyString
   slug: MyString
   description: MyString
-  price: MyString
-  stock: MyString
+  
