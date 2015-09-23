@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   resources :images
   resources :products
   resources :variants
+  resources :categories
 
   root 'products#index'
   
