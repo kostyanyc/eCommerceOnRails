@@ -1,0 +1,14 @@
+user_one:    
+    first_name: "Konst"
+    last_name: "Mikhail"
+    profile_name: "konst"
+    email: "konstat@ctgr.com"
+    encrypted_password: "localhost"
+
+user_two:    
+    first_name: "Konst"
+    last_name: "Mikhail"
+    profile_name: "konst"
+    email: "konstat@ctgr2.com"
+    encrypted_password: "localhost"
+

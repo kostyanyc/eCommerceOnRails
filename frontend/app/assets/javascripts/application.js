@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+// Vendor Files
+//= require contact
+//= require gmaps
+//= require html5shiv
+//= require jquery.prettyPhoto
+//= require jquery.scrollUp.min
+//= require main
+//= require price-range
