@@ -1,5 +1,9 @@
 <%= form_for @image, :html => { :multipart => true } do |f| %>
   <div class="field">
+    <%= f.label :product %><br>
+    <%= f.collection_select :product_id,  Product.all, :id, :title %>
+  </div>  
+  <div class="field">
     <%= f.label :file_name %><br>
     <%= f.text_field :file_name %>
   </div>
