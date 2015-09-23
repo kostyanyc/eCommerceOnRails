@@ -1,0 +1,25 @@
+<%= form_for @variant, :html => { :multipart => true } do |f| %>
+  <div class="field">
+    <%= f.label :product %><br>
+    <%= f.collection_select :product_id,  Product.all, :id, :title %>
+  </div>  
+  <div class="field">
+    <%= f.label :sku %><br>
+    <%= f.text_field :sku %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>   
+   <div class="field">
+    <%= f.label :stock_level %><br>
+    <%= f.text_field :stock_level %>
+  </div>  
+   <div class="field">
+    <%= f.label :is_prime %><br>
+    <%= f.text_field :is_prime %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => 'btn btn-default navbar-btn'%>
+  </div>
+<% end %>

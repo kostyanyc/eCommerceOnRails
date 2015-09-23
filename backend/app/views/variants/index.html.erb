@@ -1,0 +1,12 @@
+<h1>My Variants Index</h1> 
+Please add variant variants to your store <%= link_to "adding new variants", new_variant_path,   { :class=>"btn btn-default" } %>
+<p>
+<ul class="list-group">
+	<% @variants.each do |variant| %>
+	<li class="list-group-item">
+		<h4 class="list-group-item-heading"><%= variant.meta_title %></h4>
+		<p class="list-group-item-text"><%= variant.meta_description %></p>		
+		Link: <%= link_to "Read me", variant_path(variant)%>
+	</li>
+	<% end %>
+</ul>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :images
   resources :products
+  resources :variants
 
   root 'products#index'
   
