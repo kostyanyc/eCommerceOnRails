@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-	before_action :set_product, only: [:show, :edit, :update, :destroy]
+	before_action :set_product, only: [:show, :edit, :update, :destroy, :admin]
 
 	#before_action :authenticate_user!
 	def index
@@ -9,7 +9,10 @@ class ProductsController < ApplicationController
 	end
 
 	def show
-
+		 #TODO: add index to slug
+		  product_relation = Product.all                             
+                              .where(slug: params[:id])
+		 @variant = Variant.joins(:product).merge(product_relation).first
 	end
 
 	# GET /products/1/edit
@@ -22,7 +25,7 @@ class ProductsController < ApplicationController
 		@product = Product.new
 	end
 
-	#GET /products/shop
+	#GET /products/admin
 	def admin
   	   @products = Product.all
     end
@@ -32,7 +35,7 @@ class ProductsController < ApplicationController
 
 	    respond_to do |format|
 	      if @product.save
-	        format.html { redirect_to @product, notice: 'Status was successfully created.' }
+	        format.html { redirect_to action: "new", notice: 'Status was successfully created.' }
 	        format.json { render :show, product: :created, location: @product }
 	      else
 	        format.html { render :new }

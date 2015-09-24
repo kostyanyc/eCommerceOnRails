@@ -31,5 +31,7 @@ module Backend
     config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
     config.assets.precompile += %w( .svg .eot .woff .ttf)
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
+    
   end
 end
