@@ -3,7 +3,9 @@ class ProductsController < ApplicationController
 
 	#before_action :authenticate_user!
 	def index
-		@products = Product.all
+		 #Only display primary product elimintating other variants for catalog index
+  	    @variants = Variant.where("is_prime = ?", true)
+		
 	end
 
 	def show
@@ -21,9 +23,8 @@ class ProductsController < ApplicationController
 	end
 
 	#GET /products/shop
-	def shop
-  	    #Only display primary product elimintating other variants for catalog index
-  	    @variants = Variant.where("is_prime = ?", true)
+	def admin
+  	   @products = Product.all
     end
 
 	def create
