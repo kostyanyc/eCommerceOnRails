@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  
   #get 'carts/show'
 
   #get 'cart_line_items/create'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   resources :variants
   resources :categories
   resources :carts
+  resource :orders
 
 
   resources :cart_line_items

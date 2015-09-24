@@ -56,6 +56,6 @@
   <%= link_to "Continue Shopping", products_path %>  
   <% if  @cart.cart_line_items.first %>
     |
-    <%#= link_to "Checkout", new_order_url %>
+    <%= link_to "Checkout", new_orders_path %>
   <% end %>
 </p>
