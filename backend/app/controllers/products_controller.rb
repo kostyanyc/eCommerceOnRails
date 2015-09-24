@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
+
 	#before_action :authenticate_user!
 	def index
 		@products = Product.all
@@ -18,6 +19,12 @@ class ProductsController < ApplicationController
 	def new 
 		@product = Product.new
 	end
+
+	#GET /products/shop
+	def shop
+  	    #Only display primary product elimintating other variants for catalog index
+  	    @variants = Variant.where("is_prime = ?", true)
+    end
 
 	def create
 	   @product = Product.new(product_params)

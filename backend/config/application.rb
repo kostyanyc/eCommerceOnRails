@@ -25,5 +25,11 @@ module Backend
     
     #Setting assets precompile to false for faster assets precompile
     config.assets.initialize_on_precompile = false
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'stylesheets')
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'javascript')
+
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+    config.assets.precompile += %w( .svg .eot .woff .ttf)
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end
