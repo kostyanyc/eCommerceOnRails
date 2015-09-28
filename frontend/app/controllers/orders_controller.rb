@@ -7,6 +7,11 @@ class OrdersController < ApplicationController
 
     if @order.save  
       render :action => "success"
+      	@order.cart.cart_line_items.each do |cart_line_item|      		
+		 	@variant = Variant.all.where(id: cart_line_item.variant_id).first
+      		@variant.stock_level = @variant.stock_level.to_i - cart_line_item.quantity.to_i
+      		@variant.save
+  		end
     else
       render :action => "failure"
     end

@@ -37,7 +37,12 @@
 								
 								<%= form_tag({:controller=>"cart_line_items",  :id => @variant.product.slug}, method: :post) do %>
 								  <%= number_field_tag :quantity, '1'%>
-								  <%= submit_tag 'Add to Cart', name: nil %>
+								  <%if @variant.stock_level>0 %>
+								  	<%= submit_tag 'Add to Cart', name: nil %>
+								  <%else%>
+									<%= submit_tag 'Add to Cart', name: nil, disabled: true %>
+								  <%end%>
+								  
 								<% end %>
 
 							</div><!--/product-information-->
