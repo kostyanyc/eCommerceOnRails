@@ -126,8 +126,8 @@ Manual testing was performed for visual as well as integration testing
  * Images are assigned directly to product model for now but can be extended by adding images to specific product variants
  * Categories are assigned to Variants and Products are filtered via Variants affiliation with the category
  * Taxonomy model in the form of many to many relationship between Variant and Category models is set up but not currently used
-* CanCan gem will be preferred choice for authorization implementation for future development
-* FactoryGirl gem will be preferred choice for unit testing for future development
+ * CanCan gem will be preferred choice for authorization implementation for future development
+ * FactoryGirl gem will be preferred choice for unit testing for future development
 
 
 
