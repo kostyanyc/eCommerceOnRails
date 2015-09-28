@@ -4,16 +4,16 @@ eCommerce on Rails  project is designed to showcase Ruby on Rails Framework in d
 #Business Requirements
 
 * Admin Services
-  * Product Management
-  * Category Management
-  * Order Management
-  * User Management
+  * Product Management - CRUD
+  * Category Management - CRUD
+  * Order Management - View Only
+  * User Management - Create/View Only
 
 * Store Services
-  * Product Listing
-  * Category Listing
-  * Shopping Cart
-  * Order Placement
+  * Product Listing - View Only
+  * Category Listing - View Only
+  * Shopping Cart - CRUD
+  * Order Placement - Create Only
 
 # Technical Requirements
 The following is the list of services required to set up and run eCommerce on Rails project
@@ -75,6 +75,61 @@ eCommerce on Rails is broken down into two Rails application each designed to fu
     * gem "paperclip", "~> 4.3"
     * gem "friendly_id", "~> 5.0.1"
     * gem "pg"
+
+# Testing Approach
+RSpec is used as our unit testing tool. This project has unit test setup to validate each project's models required fields as well as controllers for presence of required actions as outlined in business requirements. Test Database must be provisioned and synced up with the project development database via 'rake db:migrate RAILS_ENV=test'
+
+This project is tested via executing individual test files via 'rake test TEST=path_to_test_file' command line. 
+Manual testing was performed for visual as well as integration testing
+
+* Tests types set up with backend and frontend Rails applications are: 
+ * Required Fields Validations
+ * Uniqueness of the fields validations
+ * Controller actions validations
+ * Index presence validations
+
+# Project Priorities in the order of development
+* Architecture Design
+1. Define project domain and outline models for Product, Categories, Images, Cart and Orders
+2. Select Frontend Frameworks and set it up
+3. Select authentication framework and set it up 
+4. Select gems for image upload and friendly url
+5. Decide on project breakdown into two Backend and Frontend Rails applications for better separation of concerns, scalability and security
+
+* Backend Rails application development
+1. Create initial Model migrations files as well as Controllers for the backend project
+2. Add and run unit test to ensure validations have been set up for models and controllers
+3. Ensure appropriate validations have been set up
+4. Added Bootstrap templated solution to the project
+5. Create views for backend Rails application
+6. Set up Authentication with the help of Devise Gem
+7. Populate test data for products, categories, images via admin UI and perform manual test
+
+* Frontend Rails application development
+1. Create sync.rake file for Models synchronization for the fronted project based on backend project migration files
+2. Add unit tests for frontend application controllers
+3. Generated frontend controllers for viewing Catalog of products as well as Shopping Cart management and Order placement
+4. Created Cart and Order models via backend migrations files
+5. Added Bootstrap templated solution to the project
+6. Created views for handling catalog, shopping cart and order placement functionality
+7. Manually tested shopping cart and order placement
+
+* Wrote documentation
+1. Business and Technical Requirements
+2. Application Setup
+3. Testing strategy
+
+* Additional Important Information
+ * Products are set up to have corresponding Variants for handling of product combinations based on size/color or other options as may be required in the future of this project
+ * Variants can be two types: master and secondary. 
+ * Each product must have at least one variant
+ * Images are assigned directly to product model for now but can be extended by adding images to specific product variants
+ * Categories are assigned to Variants and Products are filtered via Variants affiliation with the category
+ * Taxonomy model in the form of many to many relationship between Variant and Category models is set up but not currently used
+* CanCan gem will be preferred choice for authorization implementation for future development
+* FactoryGirl gem will be preferred choice for unit testing for future development
+
+
 
 
 
