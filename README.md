@@ -136,7 +136,7 @@ Manual testing was performed for visual as well as integration testing
  * Missed managing stock level requirement during alloted timeframe but will add this functionality as post release addition
  * Free Bootrtap template used for CSS/HTML look and feel of the site 
 
-*Credits
+* Credits
  * Bootstrap Free Template by Themeum - http://www.themeum.com/
  * Sharing models between two projects approach - http://hiltmon.com/blog/2013/10/14/rails-tricks-sharing-the-model
 
