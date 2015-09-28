@@ -121,7 +121,9 @@ Manual testing was performed for visual as well as integration testing
  2. Application Setup
  3. Testing strategy
 
-* Additional Important Information
+# Additional Information 
+
+* Important project considerations
  * Products are set up to have corresponding Variants for handling of product combinations based on size/color or other options as may be required in the future of this project
  * Variants can be two types: master and secondary. 
  * Each product must have at least one variant
@@ -134,8 +136,8 @@ Manual testing was performed for visual as well as integration testing
  * Missed managing stock level requirement during alloted timeframe but will add this functionality as post release addition
  * Free Bootrtap template used for CSS/HTML look and feel of the site 
 
-Credits: 
-* Bootstrap Free Template by Themeum - http://www.themeum.com/
-* Sharing models between two projects approach - http://hiltmon.com/blog/2013/10/14/rails-tricks-sharing-the-model
+*Credits
+ * Bootstrap Free Template by Themeum - http://www.themeum.com/
+ * Sharing models between two projects approach - http://hiltmon.com/blog/2013/10/14/rails-tricks-sharing-the-model
 
 
