@@ -104,6 +104,7 @@ Manual testing was performed for visual as well as integration testing
  5. Create views for backend Rails application
  6. Set up Authentication with the help of Devise Gem
  7. Populate test data for products, categories, images via admin UI and perform manual test
+ 8.  Added Friendly Url via Friendly_id Gem
 
 * Frontend Rails application development
  1. Create sync.rake file for Models synchronization for the fronted project based on backend project migration files
@@ -112,7 +113,8 @@ Manual testing was performed for visual as well as integration testing
  4. Created Cart and Order models via backend migrations files
  5. Added Bootstrap templated solution to the project
  6. Created views for handling catalog, shopping cart and order placement functionality
- 7. Manually tested shopping cart and order placement
+ 7. Added Friendly Url via Friendly_id Gem
+ 8. Manually tested shopping cart and order placement
 
 * Wrote documentation
  1. Business and Technical Requirements
