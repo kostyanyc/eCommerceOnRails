@@ -90,34 +90,34 @@ Manual testing was performed for visual as well as integration testing
 
 # Project Priorities in the order of development
 * Architecture Design
-1. Define project domain and outline models for Product, Categories, Images, Cart and Orders
-2. Select Frontend Frameworks and set it up
-3. Select authentication framework and set it up 
-4. Select gems for image upload and friendly url
-5. Decide on project breakdown into two Backend and Frontend Rails applications for better separation of concerns, scalability and security
+ 1. Define project domain and outline models for Product, Categories, Images, Cart and Orders
+ 2. Select Frontend Frameworks and set it up
+ 3. Select authentication framework and set it up 
+ 4. Select gems for image upload and friendly url
+ 5. Decide on project breakdown into two Backend and Frontend Rails applications for better separation of concerns, scalability and security
 
 * Backend Rails application development
-1. Create initial Model migrations files as well as Controllers for the backend project
-2. Add and run unit test to ensure validations have been set up for models and controllers
-3. Ensure appropriate validations have been set up
-4. Added Bootstrap templated solution to the project
-5. Create views for backend Rails application
-6. Set up Authentication with the help of Devise Gem
-7. Populate test data for products, categories, images via admin UI and perform manual test
+ 1. Create initial Model migrations files as well as Controllers for the backend project
+ 2. Add and run unit test to ensure validations have been set up for models and controllers
+ 3. Ensure appropriate validations have been set up
+ 4. Added Bootstrap templated solution to the project
+ 5. Create views for backend Rails application
+ 6. Set up Authentication with the help of Devise Gem
+ 7. Populate test data for products, categories, images via admin UI and perform manual test
 
 * Frontend Rails application development
-1. Create sync.rake file for Models synchronization for the fronted project based on backend project migration files
-2. Add unit tests for frontend application controllers
-3. Generated frontend controllers for viewing Catalog of products as well as Shopping Cart management and Order placement
-4. Created Cart and Order models via backend migrations files
-5. Added Bootstrap templated solution to the project
-6. Created views for handling catalog, shopping cart and order placement functionality
-7. Manually tested shopping cart and order placement
+ 1. Create sync.rake file for Models synchronization for the fronted project based on backend project migration files
+ 2. Add unit tests for frontend application controllers
+ 3. Generated frontend controllers for viewing Catalog of products as well as Shopping Cart management and Order placement
+ 4. Created Cart and Order models via backend migrations files
+ 5. Added Bootstrap templated solution to the project
+ 6. Created views for handling catalog, shopping cart and order placement functionality
+ 7. Manually tested shopping cart and order placement
 
 * Wrote documentation
-1. Business and Technical Requirements
-2. Application Setup
-3. Testing strategy
+ 1. Business and Technical Requirements
+ 2. Application Setup
+ 3. Testing strategy
 
 * Additional Important Information
  * Products are set up to have corresponding Variants for handling of product combinations based on size/color or other options as may be required in the future of this project
