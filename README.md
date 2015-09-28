@@ -59,7 +59,7 @@ eCommerce on Rails is broken down into two Rails application each designed to fu
     Variant.create(id:3, sku: 'sku003', price: '45.00', stock_level: '10', is_prime: true, product_id: '3', category_id: '2')
     ```
   * Backend application is protected with authentication by Devise and initial user registration is required
-  * Requires the following Gems to be included in Gemfile in addition to standard Rails 4 out of the box Gems
+  * Requires the following Gems to be included in Gemfile in addition to standard Rails 4 out of the box Gems. Make sure ot run `bundle install` on your machine for below listed gems to be installed
     * gem "devise"
     * gem "paperclip", "~> 4.3"
     * gem "friendly_id", "~> 5.0.1"
@@ -67,7 +67,7 @@ eCommerce on Rails is broken down into two Rails application each designed to fu
     
 * Frontend Rails application (Store Catalog + Shopping Cart)
   * Contains eCommerce shopping cart and order placement code as well as sharing models from Backend Rails application
-    * There is a specific Rake Task setup to synchronize all of the project models as well as assets from the Backend Application. This file is called sync.rake and is required to be run via rake `rake sync:copy` command every time new model is added to the Backend Rails application
+    * There is a specific Rake Task setup to synchronize all of the project models as well as assets from the Backend Application. This file is called sync.rake and is required to be run via rake `rake sync:copy` command every time new model is added to the Backend Rails application in addition to out of the box Rails 4 gems.
     ```
     namespace :sync do
     
@@ -96,7 +96,7 @@ eCommerce on Rails is broken down into two Rails application each designed to fu
       end
     end
    ```
-  * Requires the following Gems to be included in Gemfile in addition to standard Rails 4 out of the box Gems
+  * Requires the following Gems to be included in Gemfile in addition to standard Rails 4 out of the box Gems. Make sure ot run `bundle install` on your machine for below listed gems to be installed in addition to out of the box Rails 4 gems.
     * gem "devise"
     * gem "paperclip", "~> 4.3"
     * gem "friendly_id", "~> 5.0.1"
