@@ -52,12 +52,12 @@ eCommerce on Rails is broken down into two Rails application each designed to fu
     Image.create(id:1, file_name: 'tulips.jpg', title: 'Tulips', description: 'Photo of Tulips for sale', meta_alt: 'Tulips', product_id: 1, asset_file_name: 'Tulips.jpg', asset_content_type: 'image/jpg', asset_file_size: 620888, asset_updated_at: '2015-09-22')
     Image.create(id:2, file_name: 'desert.jpg', title: 'Desert', description: 'Paintings of Desert for sale', meta_alt: 'Desert', product_id: 2, asset_file_name: 'Desert.jpg', asset_content_type: 'image/jpg', asset_file_size: 845941, asset_updated_at: '2015-09-22')
     Image.create(id:3, file_name: 'penguins.jpg', title: 'Penguins', description: 'Photo of Penguins for sale', meta_alt: 'Penguins', product_id: 3, asset_file_name: 'Penguins.jpg', asset_content_type: 'image/jpg', asset_file_size: 777835, asset_updated_at: '2015-09-22')
+    
+    Variant.delete_all
+    Variant.create(id:1, sku: 'sku001', price: '15.00', stock_level: '10', is_prime: true, product_id: '1', category_id: '1')
+    Variant.create(id:2, sku: 'sku002', price: '30.00', stock_level: '10', is_prime: true, product_id: '2', category_id: '1')
+    Variant.create(id:3, sku: 'sku003', price: '45.00', stock_level: '10', is_prime: true, product_id: '3', category_id: '2')
     ```
-Variant.delete_all
-Variant.create(id:1, sku: 'sku001', price: '15.00', stock_level: '10', is_prime: true, product_id: '1', category_id: '1')
-Variant.create(id:2, sku: 'sku002', price: '30.00', stock_level: '10', is_prime: true, product_id: '2', category_id: '1')
-Variant.create(id:3, sku: 'sku003', price: '45.00', stock_level: '10', is_prime: true, product_id: '3', category_id: '2')
-
   * Backend application is protected with authentication by Devise and initial user registration is required
   * Requires the following Gems to be included in Gemfile in addition to standard Rails 4 out of the box Gems
     * gem "devise"
