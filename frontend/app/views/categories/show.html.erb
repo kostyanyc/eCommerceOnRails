@@ -12,7 +12,7 @@
 								</div>
 							</div>
 							<%end%>
-						</div><!--/category-products-->					
+						</div><!--/category-productsr-->					
 						
 					</div>
 				</div>
@@ -27,7 +27,8 @@
 									<div class="productinfo text-center">	
 										<%= image_tag Image.where(product: [variant.product]).first.asset.url(:thumb)%>
 										<h2><%= number_to_currency(variant.price)%></h2>
-										<p><%= link_to variant.product.title, product_path(variant.product) %></p>										
+										<p><%= link_to variant.product.title, product_path(variant.product) %></p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>									
 								</div>								
 							</div>

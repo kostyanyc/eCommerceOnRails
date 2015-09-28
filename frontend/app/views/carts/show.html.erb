@@ -2,7 +2,7 @@
 		<div class="container">
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
-				  <li><a href="#">Home</a></li>
+				  <li><a href="/">Home</a></li>
 				  <li class="active">Shopping Cart</li>
 				</ol>
 			</div>
@@ -43,19 +43,20 @@
 							</td>
 						</tr>
 					 <%end%>
-
+					 <tr >							
+							<td colspan="6" align="right" class="total"><h3>Total: <%= number_to_currency @cart.total_price %></h3>
+							<p>
+							  <%= link_to "Continue Shopping", products_path %>  
+							  <% if  @cart.cart_line_items.first %>
+							    |
+							    <%= link_to "Checkout", new_orders_path %>
+							  <% end %>
+							</p></td>
+						</tr>					
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</section> <!--/#cart_items-->
 
-<h3>Total: <%= number_to_currency @cart.total_price %> </h3>
 
-<p>
-  <%= link_to "Continue Shopping", products_path %>  
-  <% if  @cart.cart_line_items.first %>
-    |
-    <%= link_to "Checkout", new_orders_path %>
-  <% end %>
-</p>
