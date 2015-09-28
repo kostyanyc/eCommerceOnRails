@@ -16,8 +16,12 @@
     <%= f.text_field :stock_level, :class => "form-control" %>
   </div>  
    <div class="field">
-    <%= f.label :Variant_Category %><br>
+    <%= f.label :variant_type %><br>
     <%= f.select :is_prime, [["Primary", "true"], ["Secondary", "false"]] %>
+  </div>
+  <div class="field">
+    <%= f.label :variant_category %><br>
+    <%= f.collection_select :category_id,  Category.all, :id, :title %>
   </div>
   <div class="actions">
     <%= f.submit :class => 'btn btn-default navbar-btn'%>

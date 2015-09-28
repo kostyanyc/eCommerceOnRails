@@ -65,6 +65,6 @@ class VariantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def variant_params
-      params.require(:variant).permit(:product_id, :sku, :price, :stock_level, :is_prime,)
+      params.require(:variant).permit(:product_id, :sku, :price, :stock_level, :is_prime, :category_id)
     end
 end
