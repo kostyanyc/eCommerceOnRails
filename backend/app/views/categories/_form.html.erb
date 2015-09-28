@@ -1,31 +1,31 @@
 <%= form_for @category, :html => { :multipart => true } do |f| %>
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description , :class => "form-control"%>
   </div>   
    <div class="field">
     <%= f.label :slug %><br>
-    <%= f.text_field :slug %>
+    <%= f.text_field :slug , :class => "form-control"%>
   </div>  
   <div class="field">
     <%= f.label :sort_order %><br>
-    <%= f.text_field :sort_order %>
+    <%= f.text_field :sort_order , :class => "form-control"%>
   </div> 
    <div class="field">
     <%= f.label :meta_title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => "form-control" %>
   </div>
    <div class="field">
     <%= f.label :meta_keywords %><br>
-    <%= f.text_field :meta_keywords %>
+    <%= f.text_field :meta_keywords , :class => "form-control"%>
   </div>
   <div class="field">
     <%= f.label :meta_description %><br>
-    <%= f.text_area :meta_description %>
+    <%= f.text_area :meta_description , :class => "form-control"%>
   </div>
   <div class="actions">
     <%= f.submit :class => 'btn btn-default navbar-btn'%>

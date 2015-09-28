@@ -1,12 +1,21 @@
-<h1>My Category Index</h1> 
+<h1>Store Categories</h1> 
 Please add categories to your store <%= link_to "adding new categorys", new_category_path,   { :class=>"btn btn-default" } %>
 <p>
-<ul class="list-group">
+<table class="table table-condensed">
+		<thead>
+			<tr>
+				<td><b>Title</b></td>
+				<td><b>Description</b></td>
+				<td><b>Modify</b></td>				
+			</tr>
+		</thead>
 	<% @categories.each do |category| %>
-	<li class="list-group-item">
-		<h4 class="list-group-item-heading"><%= category.title %></h4>
-		<p class="list-group-item-text"><%= category.description %></p>		
-		Link: <%= link_to "Read me", category_path(category)%>
-	</li>
+		<tbody>
+			<tr>				
+				<td><%= category.title %></td>
+				<td><%= category.description%></td>				
+				<td><%= link_to "Edit", edit_category_path(category)%></td>			
+			</tr>				
+		</tbody>	
 	<% end %>
-</ul>
+	</table>

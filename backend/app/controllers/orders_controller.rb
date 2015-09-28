@@ -1,4 +1,14 @@
 class OrdersController < ApplicationController
+
+	 def index
+    @orders = Order.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @orders }
+    end
+  end
+  
   def create
   	@cart = current_cart
     @order = Order.new(order_params)  
@@ -33,14 +43,7 @@ class OrdersController < ApplicationController
     end
   end
 
-   def index
-    @orders = Order.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @orders }
-    end
-  end
+  
 
   def order_params
       params.require(:order).permit(:cart_id, :first_name, :last_name, :address_1, :address_2, :city, :state, :zip)

@@ -1,16 +1,26 @@
-<h1>My Variants Index</h1> 
+<h1>Store Variants</h1> 
 Please add variant variants to your store <%= link_to "adding new variants", new_variant_path,   { :class=>"btn btn-default" } %>
 <p>
-<ul class="list-group">
-	<% @variants.each do |variant| %>
-	<li class="list-group-item">
-		<h4 class="list-group-item-heading"><%= variant.product.title %></h4>
-		<p class="list-group-item-text"><%= variant.product.description %></p>	
-		<p class="list-group-item-text"><%= variant.sku %></p>
-		<p class="list-group-item-text"><%= variant.price %></p>
-		<p class="list-group-item-text"><%= variant.is_prime %></p>
-
-		Link: <%= link_to "Read me", variant_path(variant)%>
-	</li>
+   <table class="table table-condensed">
+		<thead>
+			<tr>
+				<td><b>Title</b></td>
+				<td><b>Description</b></td>
+				<td><b>SKU</b></td>
+				<td><b>Price</b></td>
+				<td><b>Primary</b></td>
+				<td><b>Modify</b></td>				
+			</tr>
+		</thead>
+	<% @variants.each do |variant| %>	
+		<tbody>
+			<tr>				
+				<td><%= variant.product.title %></td>
+				<td><%= variant.product.description %></td>	
+				<td><%= variant.sku %></td>	
+				<td><%= variant.price %></td>	
+				<td><%= variant.is_prime %></td>			
+				<td><%= link_to "Edit", edit_variant_path(variant)%></td>			
+			</tr>				
+		</tbody>	
 	<% end %>
-</ul>

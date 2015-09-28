@@ -1,13 +1,23 @@
-<h1>My Images Index</h1> 
+<h1>Store Images</h1> 
 Please add Images to your store <%= link_to "adding new images", new_image_path,   { :class=>"btn btn-default" } %>
 <p>
-<ul class="list-group">
+<table class="table table-condensed">
+		<thead>
+			<tr>
+				<td><b>Title</b></td>
+				<td><b>Description</b></td>
+				<td><b>Thumb</b></td>
+				<td><b>Modify</b></td>				
+			</tr>
+		</thead>
 	<% @images.each do |image| %>
-	<li class="list-group-item">
-		<h4 class="list-group-item-heading"><%= image.title %></h4>
-		<p class="list-group-item-text"><%= image.description %></p>
-		 <p><%= image_tag image.asset.url(:thumb)%></p>
-		Link: <%= link_to "Read me", image_path(image)%>
-	</li>
+		<tbody>
+			<tr>				
+				<td><%= image.title %></td>
+				<td><%= image.description%></td>	
+				<td><%= image_tag image.asset.url(:thumb)%></td>		
+				<td><%= link_to "Edit", edit_image_path(image)%></td>			
+			</tr>				
+		</tbody>	
 	<% end %>
-</ul>
+	</table>

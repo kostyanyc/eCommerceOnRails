@@ -1,23 +1,23 @@
 <%= form_for @image, :html => { :multipart => true } do |f| %>
   <div class="field">
     <%= f.label :product %><br>
-    <%= f.collection_select :product_id,  Product.all, :id, :title %>
+    <%= f.collection_select :product_id,  Product.all, :id, :title, :class => "form-control" %>
   </div>  
   <div class="field">
     <%= f.label :file_name %><br>
-    <%= f.text_field :file_name %>
+    <%= f.text_field :file_name, :class => "form-control" %>
   </div>
    <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :class => "form-control" %>
   </div>
   <div class="field">
     <%=f.label :image%>
-    <%=f.file_field :asset%>
+    <%=f.file_field :asset, :class => "form-control"%>
   </div>
   <div class="actions">
     <%= f.submit :class => 'btn btn-default navbar-btn'%>

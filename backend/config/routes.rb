@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  
-  #get 'carts/show'
-
-  #get 'cart_line_items/create'
-
-  #get 'cart_line_items/show'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 
@@ -14,10 +8,12 @@ Rails.application.routes.draw do
   resources :variants
   resources :categories
   resources :carts
-  resource :orders
-
-
+  resource :orders do
+    get "index"
+  end
   resources :cart_line_items
+
+
 
   
 

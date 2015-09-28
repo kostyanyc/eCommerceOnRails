@@ -3,16 +3,13 @@ class ProductsController < ApplicationController
 
 	#before_action :authenticate_user!
 	def index
-		 #Only display primary product elimintating other variants for catalog index
-  	    @variants = Variant.where("is_prime = ?", true)
+		
+  	    @products = Product.all
 		
 	end
 
 	def show
-		 #TODO: add index to slug
-		  product_relation = Product.all                             
-                              .where(slug: params[:id])
-		 @variant = Variant.joins(:product).merge(product_relation).first
+		
 	end
 
 	# GET /products/1/edit
@@ -25,17 +22,12 @@ class ProductsController < ApplicationController
 		@product = Product.new
 	end
 
-	#GET /products/admin
-	def admin
-  	   @products = Product.all
-    end
-
 	def create
 	   @product = Product.new(product_params)
 
 	    respond_to do |format|
 	      if @product.save
-	        format.html { redirect_to action: "new", notice: 'Status was successfully created.' }
+	        format.html { redirect_to products_path, notice: 'product was successfully created.' }
 	        format.json { render :show, product: :created, location: @product }
 	      else
 	        format.html { render :new }
@@ -49,7 +41,7 @@ class ProductsController < ApplicationController
 	def update
 	  respond_to do |format|
 	    if @product.update(product_params)
-	      format.html { redirect_to @product, notice: 'product was successfully updated.' }
+	      format.html { redirect_to products_path, notice: 'product was successfully updated.' }
 	      format.json { render :show, product: :ok, location: @product }
 	    else
 	      format.html { render :edit }

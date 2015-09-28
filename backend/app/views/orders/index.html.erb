@@ -1,2 +1,53 @@
-<h1>Orders#index</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+<h1>Store Orders</h1> 
+Review Orders
+<p>
+<ul class="list-group">
+	<% @orders.each do |order| %>
+	<li class="list-group-item">
+		<h4 class="list-group-item-heading">Order ID: <%= order.id %></h4>
+		<p class="list-group-item-text"><b>Order Creation Date:</b> <%= order.created_at %></p>
+		<p class="list-group-item-text"><b>First Name:</b> <%= order.first_name %></p>
+		<p class="list-group-item-text"><b>Last Name:</b> <%= order.last_name %></p>
+		<p class="list-group-item-text"><b>Address:</b> <%= order.address_1 %> <%= order.address_2 %></p>
+		<p class="list-group-item-text"><b>City:</b> <%= order.city %></p>
+		<p class="list-group-item-text"><b>State:</b> <%= order.city %></p>
+		<p class="list-group-item-text"><b>Zip:</b> <%= order.zip %></p>
+		<p class="list-group-item-text"><b>Total Order Price:</b> <%= order.cart.total_price %></p>	
+
+		<table class="table table-condensed">
+			<thead>
+				<tr class="cart_menu">
+					<td class="image"><h4>Order Item(s)</h4></td>
+					<td class="description"></td>
+					<td class="price"><b>Price</b></td>
+					<td class="quantity"><b>Quantity</b></td>
+					<td class="total"><b>Total</b></td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<% order.cart.cart_line_items.each do |cart_line_item| %>
+				<tr>
+					<td class="cart_product">
+						<%= image_tag Image.where(product: [cart_line_item.variant.product]).first.asset.url(:thumb)%>
+					</td>
+					<td class="cart_description">
+						<h4><%= cart_line_item.variant.product.title %></h4>
+						<p>SKU: <%= cart_line_item.variant.sku %></p>
+					</td>
+					<td class="cart_price">
+						<h4><%= number_to_currency cart_line_item.unit_price %></h4>
+					</td>
+					<td class="cart_price">
+						<h4><%= cart_line_item.quantity %></h4>
+					</td>
+					<td class="cart_total">
+						<h4 class="cart_total_price"><%= number_to_currency cart_line_item.full_price %></h4>
+					</td>			
+				</tr>
+				<%end%>
+			</tbody>
+		</table>	
+	</li>
+	<% end %>
+</ul>
