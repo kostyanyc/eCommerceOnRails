@@ -97,18 +97,18 @@ Manual testing was performed for visual as well as integration testing
  5. Decide on project breakdown into two Backend and Frontend Rails applications for better separation of concerns, scalability and security
 
 * Backend Rails application development
- 1. Create initial Model migrations files as well as Controllers for the backend project
- 2. Add and run unit test to ensure validations have been set up for models and controllers
- 3. Ensure appropriate validations have been set up
+ 1. Created initial Model migrations files as well as Controllers for the backend project
+ 2. Added and run unit test to ensure validations have been set up for models and controllers
+ 3. Ensured appropriate validations have been set up
  4. Added Bootstrap templated solution to the project
- 5. Create views for backend Rails application
+ 5. Created views for backend Rails application
  6. Set up Authentication with the help of Devise Gem
- 7. Populate test data for products, categories, images via admin UI and perform manual test
+ 7. Populated test data for products, categories, images via admin UI and perform manual test
  8.  Added Friendly Url via Friendly_id Gem
 
 * Frontend Rails application development
- 1. Create sync.rake file for Models synchronization for the fronted project based on backend project migration files
- 2. Add unit tests for frontend application controllers
+ 1. Created sync.rake file for Models synchronization for the fronted project based on backend project migration files
+ 2. Added unit tests for frontend application controllers
  3. Generated frontend controllers for viewing Catalog of products as well as Shopping Cart management and Order placement
  4. Created Cart and Order models via backend migrations files
  5. Added Bootstrap templated solution to the project
