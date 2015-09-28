@@ -130,6 +130,7 @@ Manual testing was performed for visual as well as integration testing
  * Catalog displayes products with master variants only, secondary variants are incorporated as a model by not displayed on the site
  * Images are assigned directly to product model for now but can be extended by adding images to specific product variants
  * Categories are assigned to Variants and Products are filtered via Variants affiliation with the category
+ * Categories are designed to be self referenced models via Category.Id and Category.parent_id but not implemented in code
  * Taxonomy model in the form of many to many relationship between Variant and Category models is set up but not currently used
  * CanCan gem will be preferred choice for authorization implementation for future development
  * FactoryGirl gem will be preferred choice for unit testing for future development
