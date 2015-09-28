@@ -11,23 +11,23 @@
   <% end %>
 <div class="field">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :address_1 %><br />
-    <%= f.text_field :address_1 %>
+    <%= f.text_field :address_1, :class => "form-control" %>
   </div>
    <div class="field">
     <%= f.label :address_2 %><br />
-    <%= f.text_field :address_2 %>
+    <%= f.text_field :address_2, :class => "form-control" %>
   </div>
    <div class="field">
     <%= f.label :city %><br />
-    <%= f.text_field :city %>
+    <%= f.text_field :city, :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :State, "(tri-state only)"%> <br />
@@ -35,7 +35,7 @@
   </div>  
   <div class="field">
     <%= f.label :zip %><br />
-    <%= f.text_field :zip %>
+    <%= f.text_field :zip, :class => "form-control" %>
   </div>  
   <div class="actions">
     <%= f.submit %>
