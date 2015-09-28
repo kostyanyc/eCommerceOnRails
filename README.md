@@ -165,6 +165,7 @@ Manual testing was performed for visual as well as integration testing
  * Missed managing stock level requirement during alloted timeframe but will add this functionality as post release addition
  * Free Bootrtap template used for CSS/HTML look and feel of the site 
  * Optimization for the site needed such as better encapuslation with additonal private methods, partial pages for better html/css reuse. 
+ * Delete for Categories, Products, Variants is avaible but not exposed via UI. 
 
 * Credits
  * Bootstrap Free Template by Themeum - http://www.themeum.com/
