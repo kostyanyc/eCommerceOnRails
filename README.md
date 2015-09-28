@@ -130,6 +130,8 @@ Manual testing was performed for visual as well as integration testing
  * Taxonomy model in the form of many to many relationship between Variant and Category models is set up but not currently used
  * CanCan gem will be preferred choice for authorization implementation for future development
  * FactoryGirl gem will be preferred choice for unit testing for future development
+ * Added Devise authentication as an extra binus for the project
+ * Missed managing stock level requirement during alloted timeframe but will add this functionality as post release addition
 
 
 
