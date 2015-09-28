@@ -67,7 +67,7 @@ eCommerce on Rails is broken down into two Rails application each designed to fu
     
 * Frontend Rails application (Store Catalog + Shopping Cart)
   * Contains eCommerce shopping cart and order placement code as well as sharing models from Backend Rails application
-    * There is a specific Rake Task setup to synchronize all of the project models as well as assets from the Backend Application. This file is called sync.rake and is required to be run via rake `rake sync:copy` command every time new model is added to the Backend Rails application in addition to out of the box Rails 4 gems.
+    * There is a specific Rake Task setup to synchronize all of the project models as well as assets from the Backend Application. This file is called sync.rake and is <b>required</b> to be ran via rake `rake sync:copy` command <b>every time new model is added or updated</b> to the Backend Rails application in addition to out of the box Rails 4 gems or <b>new images are loaded via admin interface</b> for products!
     ```
     namespace :sync do
     
