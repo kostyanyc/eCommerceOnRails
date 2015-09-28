@@ -127,6 +127,7 @@ Manual testing was performed for visual as well as integration testing
  * Products are set up to have corresponding Variants for handling of product combinations based on size/color or other options as may be required in the future of this project
  * Variants can be two types: master and secondary. 
  * Each product must have at least one variant
+ * Catalog displayes products with master variants only, secondary variants are incorporated as a model by not displayed on the site
  * Images are assigned directly to product model for now but can be extended by adding images to specific product variants
  * Categories are assigned to Variants and Products are filtered via Variants affiliation with the category
  * Taxonomy model in the form of many to many relationship between Variant and Category models is set up but not currently used
