@@ -31,15 +31,41 @@ The following is the list of services required to set up and run eCommerce on Ra
 # Application Setup 
 eCommerce on Rails is broken down into two Rails application each designed to fulfil business requirements outlined above. 
 
-* Backend Rails application
-  * Contains all of the models as well as migration files and seed data for eCommerce application
+* Backend Rails application (Store Administration)
+  * Contains all of the models as well as migration files and seed data for eCommerce application. Run `rake db:seed` in order to populate database with the intial sets of data.
+    ```
+    Order.delete_all
+    CartLineItem.delete_all
+    Cart.delete_all
+    
+    
+    Category.delete_all
+    Category.create(id: 1, title: 'Paintings', slug: 'paintings', description: 'Paniting by Famouse artists', sort_order: 1, meta_title: 'Paintings', meta_description: 'Paniting by Famouse artists', meta_keywords: 'paintings')
+    Category.create(id: 2, title: 'Photos', slug: 'photos', description: 'Photos by Famouse artists', sort_order: 2, meta_title: 'Photos', meta_description: 'Photos by Famouse artists', meta_keywords: 'paintings')
+    
+    Product.delete_all
+    Product.create(id:1, title: 'Tulips', slug: 'tulips', description: 'Photo of Tulips for sale', meta_title: 'Tulips', meta_description: 'Photo of Tulips for sale', meta_keywords: 'tulips')
+    Product.create(id:2, title: 'Desert', slug: 'desert', description: 'Photo of Desert for sale', meta_title: 'Desert', meta_description: 'Photo of Desert for sale', meta_keywords: 'desert')
+    Product.create(id:3, title: 'Penguins', slug: 'penguins', description: 'Photo of Penguins for sale', meta_title: 'Penguins', meta_description: 'Photo of Penguins for sale', meta_keywords: 'penguins')
+    
+    Image.delete_all
+    Image.create(id:1, file_name: 'tulips.jpg', title: 'Tulips', description: 'Photo of Tulips for sale', meta_alt: 'Tulips', product_id: 1, asset_file_name: 'Tulips.jpg', asset_content_type: 'image/jpg', asset_file_size: 620888, asset_updated_at: '2015-09-22')
+    Image.create(id:2, file_name: 'desert.jpg', title: 'Desert', description: 'Paintings of Desert for sale', meta_alt: 'Desert', product_id: 2, asset_file_name: 'Desert.jpg', asset_content_type: 'image/jpg', asset_file_size: 845941, asset_updated_at: '2015-09-22')
+    Image.create(id:3, file_name: 'penguins.jpg', title: 'Penguins', description: 'Photo of Penguins for sale', meta_alt: 'Penguins', product_id: 3, asset_file_name: 'Penguins.jpg', asset_content_type: 'image/jpg', asset_file_size: 777835, asset_updated_at: '2015-09-22')
+    ```
+Variant.delete_all
+Variant.create(id:1, sku: 'sku001', price: '15.00', stock_level: '10', is_prime: true, product_id: '1', category_id: '1')
+Variant.create(id:2, sku: 'sku002', price: '30.00', stock_level: '10', is_prime: true, product_id: '2', category_id: '1')
+Variant.create(id:3, sku: 'sku003', price: '45.00', stock_level: '10', is_prime: true, product_id: '3', category_id: '2')
+
+  * Backend application is protected with authentication by Devise and initial user registration is required
   * Requires the following Gems to be included in Gemfile in addition to standard Rails 4 out of the box Gems
     * gem "devise"
     * gem "paperclip", "~> 4.3"
     * gem "friendly_id", "~> 5.0.1"
     * gem "pg"
     
-* Frontend Rails application
+* Frontend Rails application (Store Catalog + Shopping Cart)
   * Contains eCommerce shopping cart and order placement code as well as sharing models from Backend Rails application
     * There is a specific Rake Task setup to synchronize all of the project models as well as assets from the Backend Application. This file is called sync.rake and is required to be run via rake `rake sync:copy` command every time new model is added to the Backend Rails application
     ```
@@ -75,6 +101,7 @@ eCommerce on Rails is broken down into two Rails application each designed to fu
     * gem "paperclip", "~> 4.3"
     * gem "friendly_id", "~> 5.0.1"
     * gem "pg"
+
 
 # Testing Approach
 RSpec is used as our unit testing tool. This project has unit test setup to validate each project's models required fields as well as controllers for presence of required actions as outlined in business requirements. Test Database must be provisioned and synced up with the project development database via `rake db:migrate RAILS_ENV=test`
