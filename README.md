@@ -32,7 +32,7 @@ The following is the list of services required to set up and run eCommerce on Ra
 eCommerce on Rails is broken down into two Rails application each designed to fulfil business requirements outlined above. 
 
 * Backend Rails application (Store Administration)
-  * Contains all of the models as well as migration files and seed data for eCommerce application. Run `rake db:seed` in order to populate database with the initial sets of data.
+  * Contains all of the models as well as migration files and seed data for eCommerce application. Run `rake db:seed` in order to populate database with the initial sets of data. Please note seed.rb file is located in Backend Rails application.
     ```
     Order.delete_all
     CartLineItem.delete_all
