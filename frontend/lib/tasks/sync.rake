@@ -14,5 +14,13 @@ namespace :sync do
 
     # Database YML
     %x{cp #{source_path}/config/database.yml #{dest_path}/config/database.yml}
+
+    # CSS/JS
+     %x{cp #{source_path}/vendor/assets/stylesheets/main.css #{dest_path}/vendor/assets/stylesheets/main.css}
+
+    #Images recursive copy for uploaded assets
+    %x{cp -r #{source_path}/public/system/images/assets/* #{dest_path}/public/system/images/assets/}
+
+
   end
 end

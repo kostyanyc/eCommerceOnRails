@@ -3,4 +3,6 @@ class Variant < ActiveRecord::Base
     validates :price, presence: true
 
 	belongs_to :product
+	has_one :category
+
 end

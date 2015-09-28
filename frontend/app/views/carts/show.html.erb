@@ -1,0 +1,61 @@
+<section id="cart_items">
+		<div class="container">
+			<div class="breadcrumbs">
+				<ol class="breadcrumb">
+				  <li><a href="#">Home</a></li>
+				  <li class="active">Shopping Cart</li>
+				</ol>
+			</div>
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="image">Item</td>
+							<td class="description"></td>
+							<td class="price">Price</td>
+							<td class="quantity">Quantity</td>
+							<td class="total">Total</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+									
+					 <% for cart_line_item in @cart.cart_line_items %>
+						<tr>
+							<td class="cart_product">
+								<%= image_tag Image.where(product: [cart_line_item.variant.product]).first.asset.url(:thumb)%>
+							</td>
+							<td class="cart_description">
+								<h4><%= cart_line_item.variant.product.title %></h4>
+								<p>SKU: <%= cart_line_item.variant.sku %></p>
+							</td>
+							<td class="cart_price">
+								<h4><%= number_to_currency cart_line_item.unit_price %></h4>
+							</td>
+							<td class="cart_price">
+								<h4><%= cart_line_item.quantity %></h4>
+							</td>
+							<td class="cart_total">
+								<h4 class="cart_total_price"><%= number_to_currency cart_line_item.full_price %></h4>
+							</td>
+							<td class="cart_delete">								
+								<h4><%= link_to 'Delete', cart_line_item, method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+							</td>
+						</tr>
+					 <%end%>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section> <!--/#cart_items-->
+
+<h3>Total: <%= number_to_currency @cart.total_price %> </h3>
+
+<p>
+  <%= link_to "Continue Shopping", products_path %>  
+  <% if  @cart.cart_line_items.first %>
+    |
+    <%= link_to "Checkout", new_orders_path %>
+  <% end %>
+</p>

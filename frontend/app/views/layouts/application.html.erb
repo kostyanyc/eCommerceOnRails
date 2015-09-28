@@ -139,6 +139,14 @@
 			</div>
 		</div><!--/header-bottom-->
 	</header><!--/header-->
+	<% if notice %>
+	  <p class="alert alert-success"><%= notice %></p>
+	<% end %>
+	<% if alert %>
+	  <p class="alert alert-danger"><%= alert %></p>
+	<% end %>
+	<!-- system messages -->
+	<div id="content">
 <%= yield %>
 <footer id="footer"><!--Footer-->
 		<div class="footer-top">

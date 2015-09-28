@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'carts/show'
+
+  get 'catalog/index'
+
   get 'pages/404'
+
+  root 'products#index'
+
+  resources :products
+  resources :cart_line_items
+  resources :carts
+   resource :orders
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
