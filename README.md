@@ -77,9 +77,9 @@ eCommerce on Rails is broken down into two Rails application each designed to fu
     * gem "pg"
 
 # Testing Approach
-RSpec is used as our unit testing tool. This project has unit test setup to validate each project's models required fields as well as controllers for presence of required actions as outlined in business requirements. Test Database must be provisioned and synced up with the project development database via 'rake db:migrate RAILS_ENV=test'
+RSpec is used as our unit testing tool. This project has unit test setup to validate each project's models required fields as well as controllers for presence of required actions as outlined in business requirements. Test Database must be provisioned and synced up with the project development database via `rake db:migrate RAILS_ENV=test`
 
-This project is tested via executing individual test files via 'rake test TEST=path_to_test_file' command line. 
+This project is tested via executing individual test files via `rake test TEST=path_to_test_file` command line. 
 Manual testing was performed for visual as well as integration testing
 
 * Tests types set up with backend and frontend Rails applications are: 
