@@ -117,7 +117,7 @@ Manual testing was performed for visual as well as integration testing
 
 # Project Priorities in the order of development
 * Architecture Design
- 1. Define project domain and outline models for Product, Categories, Images, Cart and Orders
+ 1. Define project domain and outline models for Products, Variants, Categories, Images, Carts and Orders
  2. Select Frontend Frameworks and set it up
  3. Select authentication framework and set it up 
  4. Select gems for image upload and friendly url
