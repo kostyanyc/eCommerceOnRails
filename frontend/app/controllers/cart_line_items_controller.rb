@@ -16,7 +16,12 @@ class CartLineItemsController < ApplicationController
 	end
 
 	if @variant.stock_level.to_i < @cart_stock.to_i
-		flash[:alert] = "#{@cart_line_item.variant.product.title} cannot be added to the cart. Please add less then or equal to #{@variant.stock_level - @cart_line_item.quantity.to_i}  items"
+		if @cart_line_item 
+			flash[:alert] = "#{@cart_line_item.variant.product.title} cannot be added to the cart. Please add less then or equal to #{@variant.stock_level - @cart_line_item.quantity.to_i}  items"
+		else
+			flash[:alert] = "Item cannot be added to the cart. Please add less then or equal to #{@variant.stock_level}  items"
+		end
+
 		redirect_to product_path(@variant.product)
 	else
 		if @cart_line_item
