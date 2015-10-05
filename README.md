@@ -67,7 +67,7 @@ eCommerce on Rails is broken down into two Rails application each designed to fu
     
 * Frontend Rails application (Store Catalog + Shopping Cart)
   * Contains eCommerce shopping cart and order placement code as well as sharing models from Backend Rails application
-    * There is a specific Rake Task setup to synchronize all of the project models as well as assets from the Backend Application. This file is called sync.rake and is required to be run via rake `rake sync:copy` command every time new model is added to the Backend Rails application in addition to out of the box Rails 4 gems.
+    * There is a specific Rake Task setup to synchronize all of the project models as well as assets from the Backend Application. This file is called sync.rake and is <b>required</b> to be ran via rake `rake sync:copy` command <b>every time new model is added or updated</b> to the Backend Rails application in addition to out of the box Rails 4 gems or <b>new images are loaded via admin interface</b> for products!
     ```
     namespace :sync do
     
@@ -166,6 +166,8 @@ Manual testing was performed for visual as well as integration testing
  * Free Bootrtap template used for CSS/HTML look and feel of the site 
  * Optimization for the site needed such as better encapuslation with additonal private methods, partial pages for better html/css reuse. 
  * Delete for Categories, Products, Variants is avaible but not exposed via UI. 
+ * Product stock level is tracked by the site and add to cart button is disbaled if product becomes our of stock
+ * Check for product stock if performed by adding number of items in the shopping cart and number of selected items in the quantity text box next to "add to cart" button.
 
 * Credits
  * Bootstrap Free Template by Themeum - http://www.themeum.com/
